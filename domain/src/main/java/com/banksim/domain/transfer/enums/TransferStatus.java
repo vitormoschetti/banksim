@@ -1,4 +1,4 @@
-package com.banksim.domain.account.enums;
+package com.banksim.domain.transfer.enums;
 
 public enum TransferStatus {
 

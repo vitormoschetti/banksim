@@ -1,6 +1,7 @@
-package com.banksim.domain.account.entity;
+package com.banksim.domain.transfer.entity;
 
-import com.banksim.domain.account.enums.TransferStatus;
+import com.banksim.domain.account.entity.Account;
+import com.banksim.domain.transfer.enums.TransferStatus;
 import com.banksim.domain.shared.entity.BaseEntity;
 import com.banksim.domain.shared.entity.IAggregateRoot;
 import com.banksim.domain.shared.notification.DomainNotificationError;
