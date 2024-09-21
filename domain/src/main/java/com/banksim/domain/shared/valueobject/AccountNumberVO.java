@@ -4,14 +4,14 @@ import java.util.UUID;
 
 public class AccountNumberVO {
 
-    private final UUID accountNumber;
+    private final UUID number;
 
     public AccountNumberVO() {
-        this.accountNumber = UUID.randomUUID();
+        this.number = UUID.randomUUID();
     }
 
-    public UUID getAccountNumber() {
-        return accountNumber;
+    public UUID getNumber() {
+        return number;
     }
 
 }

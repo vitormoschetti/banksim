@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Account extends BaseEntity implements IAggregateRoot {
 
@@ -28,14 +29,22 @@ public class Account extends BaseEntity implements IAggregateRoot {
         this.validate();
     }
 
-    public void deposit(BigDecimal amount) {
-        this.transactions.add(new Transaction(TransactionType.DEPOSIT, amount));
+    public Transaction deposit(BigDecimal amount) {
+        final var transaction = new Transaction(TransactionType.DEPOSIT, amount);
+        this.transactions.add(transaction);
         this.auditTimestamps.updateNow();
+        return transaction;
     }
 
-    public void withdrawal(BigDecimal amount) {
-        this.transactions.add(new Transaction(TransactionType.WITHDRAWAL, amount));
+    public Transaction withdrawal(BigDecimal amount) {
+        final var transaction = new Transaction(TransactionType.WITHDRAWAL, amount);
+        this.transactions.add(transaction);
         this.auditTimestamps.updateNow();
+        return transaction;
+    }
+
+    public UUID getAccountNumber() {
+        return accountNumber.getNumber();
     }
 
     @Override
