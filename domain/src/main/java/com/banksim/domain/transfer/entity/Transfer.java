@@ -6,7 +6,7 @@ import com.banksim.domain.shared.entity.BaseEntity;
 import com.banksim.domain.shared.entity.IAggregateRoot;
 import com.banksim.domain.shared.notification.DomainNotificationError;
 import com.banksim.domain.shared.valueobject.AuditTimestamps;
-import com.banksim.domain.shared.valueobject.TransferValueVO;
+import com.banksim.domain.transfer.valueobject.TransferValueVO;
 
 import java.math.BigDecimal;
 import java.time.Instant;

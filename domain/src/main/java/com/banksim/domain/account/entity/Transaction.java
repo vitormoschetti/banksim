@@ -5,7 +5,7 @@ import com.banksim.domain.account.enums.TransactionType;
 import com.banksim.domain.shared.entity.BaseEntity;
 import com.banksim.domain.shared.entity.IAggregate;
 import com.banksim.domain.shared.notification.DomainNotificationError;
-import com.banksim.domain.shared.valueobject.TransactionValueVO;
+import com.banksim.domain.account.valueobject.TransactionValueVO;
 import com.banksim.domain.shared.valueobject.AuditTimestamps;
 
 import java.math.BigDecimal;

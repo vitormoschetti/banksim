@@ -1,4 +1,4 @@
-package com.banksim.domain.shared.valueobject;
+package com.banksim.domain.transfer.valueobject;
 
 import com.banksim.domain.shared.entity.BaseEntity;
 import com.banksim.domain.shared.entity.IValueObject;

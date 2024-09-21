@@ -6,13 +6,12 @@ import com.banksim.domain.shared.entity.IAggregateRoot;
 import com.banksim.domain.shared.notification.DomainNotificationError;
 import com.banksim.domain.shared.valueobject.AccountNumberVO;
 import com.banksim.domain.shared.valueobject.AuditTimestamps;
-import com.banksim.domain.shared.valueobject.BalanceVO;
+import com.banksim.domain.account.valueobject.BalanceVO;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.UUID;
 
 public class Account extends BaseEntity implements IAggregateRoot {
 
