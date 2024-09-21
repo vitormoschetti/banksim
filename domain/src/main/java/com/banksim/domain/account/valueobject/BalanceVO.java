@@ -14,10 +14,6 @@ public class BalanceVO extends BaseEntity implements IValueObject {
         this.amount = BigDecimal.ZERO;
     }
 
-    public BalanceVO(BigDecimal amount) {
-        this.amount = amount;
-    }
-
     public void add(BigDecimal add) {
         if (add.compareTo(BigDecimal.ZERO) < 1) {
             this.addMessage(new DomainNotificationError("Amount can not be less than zero"));
