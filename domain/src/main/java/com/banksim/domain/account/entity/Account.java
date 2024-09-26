@@ -9,6 +9,7 @@ import com.banksim.domain.shared.valueobject.AuditTimestamps;
 import com.banksim.domain.account.valueobject.BalanceVO;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -33,6 +34,7 @@ public class Account extends BaseEntity implements IAggregateRoot {
         final var transaction = new Transaction(TransactionType.DEPOSIT, amount);
         this.transactions.add(transaction);
         this.auditTimestamps.updateNow();
+        this.validate();
         return transaction;
     }
 
@@ -40,12 +42,25 @@ public class Account extends BaseEntity implements IAggregateRoot {
         final var transaction = new Transaction(TransactionType.WITHDRAWAL, amount);
         this.transactions.add(transaction);
         this.auditTimestamps.updateNow();
+        this.validate();
         return transaction;
     }
 
     public UUID getAccountNumber() {
         return accountNumber.getNumber();
     }
+
+    public BigDecimal getAmount() {
+        return balance.getAmount();
+    }
+    public Instant getCreatedAt() {
+        return auditTimestamps.getCreatedAt();
+    }
+
+    public Instant getUpdatedAt() {
+        return auditTimestamps.getUpdatedAt();
+    }
+
 
     @Override
     protected void validate() {

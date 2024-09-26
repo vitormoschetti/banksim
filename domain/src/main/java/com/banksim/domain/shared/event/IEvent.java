@@ -7,9 +7,14 @@ public interface IEvent<T extends IRecord> {
 
     String getEventName();
 
-    UUID getTraceId();
+    //Testing default methods
+    default UUID getTraceId() {
+        return UUID.randomUUID();
+    }
 
-    Instant getInstantCreated();
+    default Instant getInstantCreated() {
+        return Instant.now();
+    }
 
     T getPayload();
 
