@@ -50,7 +50,6 @@ public class AccountService {
 
     }
 
-
     public Transaction withdrawal(UUID accountNumber, BigDecimal amount) {
         final var account = findByAccountNumber(accountNumber);
         final var transaction = account.withdrawal(amount);
